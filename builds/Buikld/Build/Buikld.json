@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "Buikld.data.unityweb",
+"asmCodeUrl": "Buikld.asm.code.unityweb",
+"asmMemoryUrl": "Buikld.asm.memory.unityweb",
+"asmFrameworkUrl": "Buikld.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

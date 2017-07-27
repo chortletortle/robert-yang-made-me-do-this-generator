@@ -47,9 +47,9 @@ public class PathMaker : MonoBehaviour {
 				
 			ranNum = Random.Range (0f, 1f);
 			if (ranNum < .25) {
-				selection = floorPrefab;
-			} else if (ranNum > .25 && ranNum < .70f) {
 				selection = graveTile;
+			} else if (ranNum > .25 && ranNum < .70f) {
+				selection = floorPrefab;
 			} else if (ranNum > .7f && ranNum < .75f) {
 				selection = gateTile;
 			} else {
