@@ -5,19 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PathMaker : MonoBehaviour {
 
-	public static int globalTileCount = 0;
-	public static ArrayList tiles = new ArrayList();
-
 	int counter = 0;
 	public Transform floorPrefab;
 	public Transform pathmakerSpherePrefab;
 	public Transform graveTile;
 	public Transform gateTile;
 	public Transform fenceTile;
+	public Transform cam;
 	int counterLimit;
 	float lowerBound;
 	Transform selection;
-
 
 
 	void Start () {
@@ -29,8 +26,7 @@ public class PathMaker : MonoBehaviour {
 	void Update () {
 		
 
-
-		if (globalTileCount >= 500) {
+		if (cam.GetComponent<reset> ().globalTileCount >= 500) {
 			Destroy (gameObject);
 			return;
 		}
@@ -62,15 +58,14 @@ public class PathMaker : MonoBehaviour {
 			transform.position += transform.forward *= 5f;
 			transform.position = new Vector3 (Mathf.Round (transform.position.x), 
 				Mathf.Round (transform.position.y), Mathf.Round (transform.position.z));
-			if (tiles.Contains (transform.position)) {
-				Debug.Log (transform.position);
+			if (cam.GetComponent<reset> ().tiles.Contains (transform.position)) {
 			} else {
 				Instantiate (
 					selection, transform.position, Quaternion.identity
 				);
-				tiles.Add (transform.position);
+				cam.GetComponent<reset> ().tiles.Add (transform.position);
 				counter++;
-				globalTileCount++;
+				cam.GetComponent<reset> ().globalTileCount++;
 			}
 		} else {
 			Destroy (gameObject);
